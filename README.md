@@ -2,10 +2,11 @@ This is a front-end for LLVM Framework to support EXPL(Experimental Language) as
 
 
 TO COMPILE:
-> lex exptree.l
-> yacc exptree.y
-> gcc lex.yy.c y.tab.c -o expl
+$ lex exptree.l
+$ yacc exptree.y
+$ gcc lex.yy.c y.tab.c -o expl
+ 
 This will build an executable file "expl"
 
 TO EXECUTE:
-> ./expl "file-name"
+$ ./expl "file-name"
