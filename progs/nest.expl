@@ -1,0 +1,15 @@
+int main()
+{
+    decl
+	int a,b,c;
+    enddecl
+
+    a = 0;
+    if(a == 0) then
+	b = 2;
+    else if(a == 1) then
+	b = 3;
+    endif;
+    endif;
+    return 0;
+}

@@ -1,0 +1,107 @@
+class
+A         
+{
+  decl
+    int f0();
+    int f1();
+  enddecl
+  int f0() {                   /*Newly defined method*/
+       write("In class A f0");
+       return 1;
+  }
+  int f1() {                   /*Newly defined method*/
+        write("In class A f1");
+        return 1;
+  }
+}                       /*End of Class Definition A*/
+B extends A
+{
+  decl
+    int f0();
+    int f2();
+  enddecl
+int f0() {                    /*f0 of class A is overridden by this method */ 
+       write("In class B f0");
+       return 1;
+}
+int f2() {                    /*Newly defined method*/
+       write("In class B f2");
+       return 1;
+}
+/* Class B inherits f1 from Class A */
+
+}                       /*End of Class Definition B*/
+C extends B
+{
+  decl
+    int f0();
+    int f2();
+    int f4();
+  enddecl
+int f0() {                /*f0 of Class B is overridden by this method*/
+       write("In class C f0");
+       return 1;
+}
+int f2() {                /*f2 of Class B is overridden by this method */
+       write("In class C f2");
+       return 1;
+}
+int f4() {                /*Newly defined method*/
+       write("In class C f4");
+       return 1;
+}
+}
+/*Class C inherits f1 from Class A */
+
+
+Person
+{
+   decl
+	A obj;
+	int setobj(int n);
+	int func();
+   enddecl
+ 
+int setobj(int n)
+{
+  if(n < 0)then
+        self.obj = new(A);
+    else
+        if(n == 0)then
+            self.obj = new(B);
+        else
+            if(n > 0)then
+                self.obj = new(C);
+            endif;
+       endif;
+    endif;
+   return 1;
+}
+
+int func()
+{
+    write(self.obj.f0());
+    return 1;
+}
+}
+
+
+                        /*End of Class Definition C*/
+endclass
+
+
+decl
+    Person ob ;
+enddecl
+
+int main() {
+  decl
+    int temp,n;
+  enddecl
+    temp= initialize();
+    ob = new(Person);
+    read(n);
+    temp = ob.setobj(n);
+    temp = ob.func();
+    return 1;
+}

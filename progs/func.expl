@@ -1,0 +1,41 @@
+type
+linkedList {
+  int a;
+  int data;
+  int data6;
+  int data5;
+  int data4;
+  int data3;
+  int data2;
+  linkedList next;
+}
+endtype
+
+decl
+   int compute(int a,int b,int c);
+   linkedList head,head2;
+enddecl
+
+int compute(int a,int b,int c)
+{
+    decl
+
+   linkedList head;
+    enddecl
+    return a+b+c;
+}
+
+int main()
+{
+    decl
+	int a,b,c,ret;
+    enddecl
+
+    a = 2;
+    b = 2;
+    c = 2;
+    head = alloc();
+    ret=compute(a+b,b+c,c+a);
+    write(ret);
+    return 0;
+}

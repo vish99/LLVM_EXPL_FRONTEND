@@ -1,0 +1,10 @@
+decl
+    int abc,lab1,lab2[10];
+    str boring,abbo;
+enddecl
+begin
+    lab1 = 12;
+    lab2 = 25;
+    abc = lab1+lab2;
+    write(abc);
+end

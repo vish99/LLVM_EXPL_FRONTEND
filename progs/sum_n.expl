@@ -1,0 +1,13 @@
+begin
+   i=0;
+   a=0;
+   read(n);
+   while(i<=n) do
+	a = a + i;
+	if(i == 10) then
+	    break;
+	endif;
+	i = i + 1;
+   endwhile;
+   write(a);
+end

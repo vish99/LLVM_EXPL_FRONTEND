@@ -1,0 +1,19 @@
+type
+   list{
+	int data;
+	list next;
+   }
+endtype
+
+decl
+   list A,B;
+enddecl
+
+int main()
+{
+    decl
+	list A,B;
+    enddecl
+    A = B;
+    return 0;
+}

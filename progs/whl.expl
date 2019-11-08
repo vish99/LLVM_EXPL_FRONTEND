@@ -1,0 +1,15 @@
+decl
+  int i,a,j;
+enddecl
+
+int main()
+{
+  i = 0;
+  a = 0;
+  while(i < 3) do
+    a = a + 1;
+    i = i + 1;
+  endwhile;
+  write(a);
+  return 0;
+}

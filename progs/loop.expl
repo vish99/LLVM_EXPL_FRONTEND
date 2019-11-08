@@ -1,0 +1,17 @@
+int main()
+{
+    decl
+	int a,b,c;
+    enddecl
+
+    a = 10;
+    b = 0;
+    while(b < a) do
+	c = c + 1;
+	if(c == 5) then
+	    break;
+	endif;
+	b = b + 1;
+    endwhile;
+    return 0;
+}

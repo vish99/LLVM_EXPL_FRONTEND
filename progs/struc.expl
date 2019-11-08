@@ -1,0 +1,150 @@
+type
+ linkedList {
+  int data; 
+  linkedList next; 
+}
+
+ marksList{
+  str name; 
+  linkedList marks;
+  marksList next;
+}
+
+pair{
+  int a;
+  int b;
+  int c;
+}
+endtype
+
+class
+Person{
+	decl
+		str name;
+	        int age;
+		int printDetails();
+		str findName();
+		int createPerson(str name, int age);
+	enddecl
+	int printDetails(){
+		decl
+		    str n;
+		enddecl
+			write(self.name);
+			write(self.age);
+			return 1;
+	}
+	str findName(){
+		decl
+		enddecl
+			return self.name;
+	}
+	int createPerson(str name, int age){
+		decl
+		enddecl
+			self.name = name;
+			self.age = age;
+			return 1;
+	}
+}    
+
+Student{
+        decl
+                str name;
+                int marks;
+		Person parent;
+                int printDetails();
+                str findName();
+                int createPerson(str name, int marks, str pName,int pAge);
+        enddecl
+        int printDetails(){
+                decl
+                    str n;
+		    int t;
+                enddecl
+                        write(self.name);
+                        write(self.marks);
+			write("is child of");
+			t = self.parent.printDetails();
+                        return 1;
+        }
+        str findName(){
+                decl
+                enddecl
+                        return self.name;
+        }
+        int createPerson(str name, int marks, str pName,int pAge){
+                decl
+			int t;
+                enddecl
+                        self.name = name;
+                        self.marks = marks;
+			self.parent = new(Person);
+			t = self.parent.createPerson(pName,pAge);
+                        return 1;
+        }
+}
+
+Doctor
+{
+      decl
+	str name;
+	int ht;
+	Student child;
+	str findName();
+	int check();
+      enddecl
+      str findName()
+      {
+	return self.name;
+      }
+      int check()
+      {
+	decl
+	   int t;
+	enddecl
+	 self.child = new(Student);
+	 t = self.child.printDetails();
+	 return 1;
+      }
+      
+}
+
+endclass
+
+decl
+  marksList mList;
+  int t;
+  Person p1,p2;
+  Student s;
+enddecl
+
+int main()
+{
+    decl
+	str name,pName;
+	int age,t,marks;
+    enddecl
+    t = initialize();
+    s = new(Student);
+    name = "vinayaka";
+    marks = 100;
+    pName = "shiva";
+    age = 1100;
+    t = s.createPerson(name,marks,pName,age);
+    t = s.printDetails();
+
+
+    p1 = new(Person);
+    p2 = new(Person);
+    name = "ravan";
+    age = 90;
+    t = p1.createPerson(name,age);
+    name = "lava";
+    age = 20;
+    t =p2.createPerson(name,age);
+    p1 = p2;
+    t = p1.printDetails();
+    t = p2.printDetails();
+    return 0;
+}

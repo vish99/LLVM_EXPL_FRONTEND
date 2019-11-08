@@ -1,0 +1,34 @@
+type
+ linkedList {
+  int data; 
+  linkedList next; 
+}
+
+ markList{
+  str name; 
+  linkedList marks;
+  markList next;
+}
+endtype
+
+decl
+  markList mList,temp,x,y,z;
+  int t;
+  str s; 
+enddecl
+
+int main()
+{
+    t = initialize();
+    t = 0;
+    while(t < 128) do
+       x = alloc();
+       if(x==NULL) then
+	  write("Out of memory");
+	  break;
+       endif;
+       write(x);
+	t = t + 1;
+    endwhile;
+    return 0;
+}

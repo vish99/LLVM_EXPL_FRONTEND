@@ -1,0 +1,17 @@
+decl
+   int a,b,c,d,e,w,x,y,z,p,q;
+enddecl
+
+int main()
+{
+   a = 2;
+   p = 0;
+   x = d * a;
+   if(p > q) then
+	x = a * d * a;
+   else
+	c = d * a * d;
+   endif;
+   x = a * d * b;
+   return 0;
+}

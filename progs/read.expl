@@ -1,0 +1,24 @@
+decl
+   int a,b,var[10];
+enddecl
+
+int main()
+{
+    decl
+	int i,j;
+    enddecl
+    read(a);
+
+    i = 0;
+    while(i < a) do
+	read(var[i]);
+	i = i + 1;
+    endwhile;
+
+    i = 0;
+    while(i < a) do
+	write(var[i]);
+	i = i + 1;
+    endwhile;
+    return 0;
+}

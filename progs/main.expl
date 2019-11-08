@@ -1,0 +1,30 @@
+decl
+   int a,factorial(int n),ab[100],hello(int k);
+enddecl
+
+int factorial(int n)
+{
+   decl
+      int v1,v2,v3,v4,v6;
+   enddecl
+   v1 = 6;
+   v2 = 3;
+   v4 = v1 + v2;
+   return v4;
+}
+
+int hello(int k)
+{
+   return 1;
+}
+
+int main()
+{
+    decl
+	int p,a;
+    enddecl
+    p = factorial(2);
+    write(p);
+    p = hello(1);
+    return 0;
+}

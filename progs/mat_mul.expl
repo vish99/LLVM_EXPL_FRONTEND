@@ -1,0 +1,53 @@
+decl
+   int i,j,k,sum,a[10][10],b[10][10],c[10][10];
+enddecl
+
+int main()
+{
+   sum = 0;
+   i = 0;
+   while(i < 3) do
+        j = 0;
+	while(j < 3) do
+  	    read(a[i][j]);
+	    j = j + 1;
+	endwhile;
+	i = i + 1;
+   endwhile;
+   i = 0;
+   while(i < 3) do
+        j = 0;
+        while(j < 3) do
+            read(b[i][j]);
+	    j = j + 1;
+        endwhile;
+        i = i + 1;
+   endwhile;
+ 
+   i = 0;
+   while(i < 3) do
+	j = 0;
+	while(j < 3) do
+	    k = 0;
+	    while(k < 3) do
+		sum = sum + a[i][k]*b[k][j];
+		k = k + 1;
+	    endwhile;
+	    c[i][j] = sum;
+	    sum = 0;
+	    j = j + 1;
+	endwhile;
+	i = i + 1;
+   endwhile;
+
+   i = 0;
+   while(i < 3) do
+        j = 0;
+        while(j < 3) do
+            write(c[i][j]);
+            j = j + 1;
+        endwhile;
+        i = i + 1;
+   endwhile;
+   return 0;
+}

@@ -1,0 +1,23 @@
+decl
+  int a,b,c;
+  str mystr,state,A(int a,str b,int c);
+enddecl
+
+
+str A(int a,str b,int c)
+{
+    write("Hello");
+    return b;
+}
+
+int main()
+{
+    decl
+	int a;
+	str MY,L;
+    enddecl
+    read(MY);
+    L = A(a,MY,a);
+    write(L);
+    return 0;
+}

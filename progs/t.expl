@@ -1,0 +1,12 @@
+decl
+   int a,b,c,d,e;
+enddecl
+
+int main()
+{
+    a = b + c;
+    d = b;
+    b = a;
+    e = d + c;
+    return 0;
+}

@@ -1,0 +1,28 @@
+type
+  boo{
+    int a;
+    int b;
+  }
+
+  foo{
+    int a;
+    boo b;
+    int c;
+  }
+endtype
+
+decl
+   boo B;
+   foo F;
+enddecl
+
+int main()
+{
+    decl
+      int a;
+      boo Ba;foo Fa;
+    enddecl
+    F = alloc();
+    F.a = 2;
+    return 0;
+}

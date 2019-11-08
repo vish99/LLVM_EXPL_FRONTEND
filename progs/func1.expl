@@ -1,0 +1,31 @@
+decl
+    int f(int x,int y);
+enddecl
+
+int f(int x,int y)
+{
+    decl
+	int ret;
+    enddecl
+
+    if(x == 0) then
+	ret = y;
+    else if(y == 0) then
+	ret = x;
+    else 
+	ret = f(f((x-2)+1,y),0) + 1;
+    endif;	
+    endif;
+    return ret;
+}
+
+int main()
+{
+    decl
+	int x,y;
+    enddecl
+    read(x);
+    read(y);
+    write(f(x,y));
+    return 0;
+}

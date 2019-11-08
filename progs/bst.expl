@@ -1,0 +1,144 @@
+type
+  bst{
+  int a;
+  bst left;
+  bst right;
+  }
+endtype
+
+decl
+  int in,opt;
+  bst insert(bst h, int key);
+  bst bst_del(bst h, int key);
+  bst inorderPredecessor(bst h);
+  bst search(bst h,int key);
+  int inOrder(bst h); 
+  int preOrder(bst h);
+  int postOrder(bst h);           
+enddecl
+
+bst insert(bst h, int key)
+{
+
+    if (h != null) then
+	 if (key < h.a) then
+            h.left  = insert(h.left, key);
+
+         else if (key > h.a) then
+                 h.right = insert(h.right, key);
+              endif;
+          endif;
+    else
+       h = alloc();
+       h.a = key;
+       h.left = null;
+       h.right = null;
+    endif;   
+   
+    return h;
+}
+bst inorderPredecessor(bst h)
+{
+    while(h.right != null) do
+	h = h.right;
+    endwhile;
+    return h;
+}
+
+bst bst_del(bst h,int key)
+{
+    decl
+	bst temp,t;
+    enddecl
+    t = h;
+    if(h.a == key) then
+        if(h.left == null) then
+	    if(h.right == null) then
+		t = null;
+	    else
+		t =  h.right;
+	    endif;
+	else
+	    if(h.right == null) then
+                t =  h.left;
+            else
+                temp = inorderPredecessor(h.left);
+		h.a = temp.a;
+		h.left = bst_del(h.left,temp.a);
+            endif;
+	endif;
+	
+    else
+        if(h.a >= key) then
+           h.left = bst_del(h.left,key);
+        else
+           h.right = bst_del(h.right,key);
+        endif;
+    endif;
+    return t;
+}
+
+int inOrder(bst h){
+     
+    
+  if(h!=null) then
+     
+    in=inOrder(h.left);
+    write(h.a);
+    in=inOrder(h.right);
+  endif;
+  return 1;
+}
+
+int preOrder(bst h){
+     
+    
+  if(h!=null) then
+    write(h.a);
+    in=preOrder(h.left);
+    
+    in=preOrder(h.right);
+  endif;
+  return 1;
+}
+
+int postOrder(bst h){
+     
+    
+  if(h!=null) then
+    
+    in=postOrder(h.left);
+    
+    in=postOrder(h.right);
+    write(h.a);
+  endif;
+  return 1;
+}
+
+int main()
+{ 
+  decl
+  int val,flag;
+  bst Root;
+  enddecl
+
+    write("Enter until zero");
+    Root = null;
+
+    read(val);
+
+    while(val!=0) do
+      Root = insert(Root,val);
+      read(val);
+    endwhile;
+
+    write("Inorder");
+    in = inOrder(Root);
+    write("Preorder");
+    in = preOrder(Root);
+    write("Postorder");
+    in = postOrder(Root);
+  
+  return 0;
+}
+

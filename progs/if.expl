@@ -1,0 +1,14 @@
+int main()
+{
+ decl
+   int a,b,c;
+ enddecl
+ read(a);
+ read(b);
+ if (a < b) then
+	write(b);
+ else
+	write(a);
+ endif;
+ return 0;
+}
